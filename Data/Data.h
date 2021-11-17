@@ -34,7 +34,7 @@ private: unsigned int MonthToYears(unsigned int& month)
 	unsigned int years = 0;
 	if (month > 12)
 	{
-		for (; month > 12; month - 12)
+		for (; month > 12; month -= 12)
 			years++;
 	}
 	return years;
@@ -42,25 +42,33 @@ private: unsigned int MonthToYears(unsigned int& month)
 private: void DaysInMonth(unsigned int& day, unsigned int& month)
 {
 	unsigned int maxDaysInMonth;
-	if (month == 2)
+	switch (month)
 	{
-		if (leap_year)
+	case 1:maxDaysInMonth = 31; break;
+	case 2:
+		if (leap_year == true)
 			maxDaysInMonth = 29;
 		else
 			maxDaysInMonth = 28;
-	}
-	if (month % 2 == 0 && month != 2)
-	{
-		maxDaysInMonth = 30;
+		break;
+	case 3:maxDaysInMonth = 31; break;
+	case 4:maxDaysInMonth = 30; break;
+	case 5:maxDaysInMonth = 31; break;
+	case 6:maxDaysInMonth = 30; break;
+	case 7:maxDaysInMonth = 31; break;
+	case 8:maxDaysInMonth = 31; break;
+	case 9:maxDaysInMonth = 30; break;
+	case 10:maxDaysInMonth = 31; break;
+	case 11:maxDaysInMonth = 30; break;
+	case 12:maxDaysInMonth = 31; break;
 
+	default:
+		break;
 	}
-	else
-	{
-		maxDaysInMonth = 31;
-	}
+	
 	for (; day > maxDaysInMonth;)
 	{
-		day - maxDaysInMonth;
+		day -= maxDaysInMonth;
 		month++;
 	}
 }
