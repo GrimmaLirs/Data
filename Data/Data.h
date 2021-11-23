@@ -33,7 +33,7 @@ class Data
 		}
 		DaysToMonth(day, month);
 	}
-
+//ѕриводим количество мес€цев в пор€док 
 	private: unsigned int MonthToYears(unsigned int& month)
 	{
 		unsigned int years = 0;
@@ -45,6 +45,7 @@ class Data
 		return years;
 	}
 
+//сколько дней в текущем мес€це
 	private: int DaysInMonth()
 	{
 		unsigned int maxDaysInMonth = 0;
@@ -83,6 +84,7 @@ class Data
 		}
 	}
 
+	//геттеры и сеттеры
 	public: int GetDay()
 	{
 	   return day;
@@ -126,7 +128,7 @@ class Data
 		this->SetDay(this->GetDay() + 1);
 		return *this;
 	}
-	Data& operator-- ()
+	Data& operator-- ()//при уменьшении даты на 1 день стараемс€ не уйти в нолевые значени€ в дне и мес€це
 	{
 		
 		if (this->GetDay() - 1 <= 0)

@@ -2,6 +2,8 @@
 using namespace std;
 int main()
 {
+	setlocale(LC_ALL, "Russian");
+	cout << "Проверяем ввод дат и коректоность их перевода\n\n\n";
 	Data data;
 	Data dataNew(31, 12, 2021);
 	Data dataMuch(40, 15, 2020);
@@ -17,51 +19,54 @@ int main()
 	cout << dataNotLeap << "\n";
 	cout << data << "\n";
 	//cin >> data;
-	//data = data + 365;
+	cout << "К дате " << data << " прибовляем 365 дней\n";
+	data = data + 365;
+	cout << data << "\n\n\n";
+	cout << "Дату " << data << " сделаем равно " << dataNew << "\n\n\n";
 	data = dataNew;
-	cout << data << "\n";
-//Тестируем операции == и !=
+	cout << data << "\n\n\n";
+	cout << "Тестируем операции == и !=" << "\n";
 	if (data == dataNew)
-		cout << "Work";
+		cout << "== работает";
 	else 
-		cout << "Dont Work";
+		cout << "== не  работает";
 	cout << "\n";
 	if (data != dataMuch)
-		cout << "Work";
+		cout << "!= работает";
 	else
-		cout << "Dont Work";
+		cout << "!= не работает";
 	cout << "\n";
-//Тестируем операции > и <
+	cout << "Тестируем операции > и <" << "\n";
 	if (dataMidle > dataSmall)
-		cout << "Work";
+		cout << "> работает";
 	else
-		cout << "Dont Work";
+		cout << "> работает";
 	cout << "\n";
 	if (dataMidle < dataLarge)
-		cout << "Work";
+		cout << "< работает";
 	else
-		cout << "Dont Work";
+		cout << "< работает";
 	cout << "\n";
-//Тестируем операции >= и <=
+	cout << "Тестируем операции >= и <=" << "\n";
 	if (dataMidle >= dataSmall && dataMidle >= dataMidle)
-		cout << "Work";
+		cout << ">= работает";
 	else
-		cout << "Dont Work";
+		cout << ">= не работает";
 	cout << "\n";
 	if (dataMidle <= dataLarge && dataMidle <= dataMidle)
-		cout << "Work";
+		cout << "<= работает";
 	else
-		cout << "Dont Work";
+		cout << "<= не работает";
 	cout << "\n";
-//Тестируем операции ++ и --
+	cout << "Тестируем операции ++ и --" << "\n";
 	Data dataLow;
-	cout << dataLow << "\n";
-	cout << dataLow-- << " Date befor -- \n";
-	cout << dataLow++ << " Date befor ++ \n";
-	cout << dataLow << "\n";
-	cout << --dataLow << " Date after -- \n";
-	cout << ++dataLow << " Date after ++ \n";
-	cout << dataLow << "\n";
+	cout << dataLow << " начальная \n";
+	cout << dataLow-- << " дата до -- \n";
+	cout << dataLow++ << " дата до ++ \n";
+	cout << dataLow << " дата после изменений\n";
+	cout << --dataLow << " дата после -- \n";
+	cout << ++dataLow << " дата после ++ \n";
+	cout << dataLow << " итоговая дата\n";
 	system("pause");
 	return 0;
 }
