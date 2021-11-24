@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 
 class Data
 {
@@ -22,18 +22,18 @@ class Data
 		  friend std::ostream& operator<< (std::ostream& out, const Data& data);
 		  friend std::istream& operator>> (std::istream& in, Data& data);
 
-	private: void TideUp() //Метод для форматирования даты
+	private: void TideUp() //РњРµС‚РѕРґ РґР»СЏ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РґР°С‚С‹
 	{
 		year += MonthToYears(month);
 		DaysToMonth(day, month);
 		year += MonthToYears(month);
-		if (((year % 4) == 0) && (((year % 100) != 0) || ((year % 400) == 0)))//Проверка на високосный год
+		if (((year % 4) == 0) && (((year % 100) != 0) || ((year % 400) == 0)))//РџСЂРѕРІРµСЂРєР° РЅР° РІРёСЃРѕРєРѕСЃРЅС‹Р№ РіРѕРґ
 		{
 			leap_year = true;
 		}
 		DaysToMonth(day, month);
 	}
-//Приводим количество месяцев в порядок 
+//РџСЂРёРІРѕРґРёРј РєРѕР»РёС‡РµСЃС‚РІРѕ РјРµСЃСЏС†РµРІ РІ РїРѕСЂСЏРґРѕРє 
 	private: unsigned int MonthToYears(unsigned int& month)
 	{
 		unsigned int years = 0;
@@ -45,7 +45,7 @@ class Data
 		return years;
 	}
 
-//сколько дней в текущем месяце
+//СЃРєРѕР»СЊРєРѕ РґРЅРµР№ РІ С‚РµРєСѓС‰РµРј РјРµСЃСЏС†Рµ
 	private: int DaysInMonth()
 	{
 		unsigned int maxDaysInMonth = 0;
@@ -84,7 +84,7 @@ class Data
 		}
 	}
 
-	//геттеры и сеттеры
+	//РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹
 	public: int GetDay()
 	{
 	   return day;
@@ -122,13 +122,13 @@ class Data
 		this->SetYear(data.GetYear());
 		return data;
 	}
-	// префиксные операторы
+	// РїСЂРµС„РёРєСЃРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 	Data& operator++ ()
 	{
 		this->SetDay(this->GetDay() + 1);
 		return *this;
 	}
-	Data& operator-- ()//при уменьшении даты на 1 день стараемся не уйти в нолевые значения в дне и месяце
+	Data& operator-- ()//РїСЂРё СѓРјРµРЅСЊС€РµРЅРёРё РґР°С‚С‹ РЅР° 1 РґРµРЅСЊ СЃС‚Р°СЂР°РµРјСЃСЏ РЅРµ СѓР№С‚Рё РІ РЅРѕР»РµРІС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РІ РґРЅРµ Рё РјРµСЃСЏС†Рµ
 	{
 		
 		if (this->GetDay() - 1 <= 0)
@@ -147,7 +147,7 @@ class Data
 			this->SetDay(this->GetDay() - 1);
 		return *this;
 	}
-	// постфиксные операторы
+	// РїРѕСЃС‚С„РёРєСЃРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 	Data operator++ (int)
 	{
 		Data prev = *this;
@@ -165,7 +165,7 @@ class Data
 
 std::ostream& operator<< (std::ostream& out, const Data& data)
 {
-	// Поскольку operator << является другом класса Data, то мы имеем прямой доступ к членам Data
+	// РџРѕСЃРєРѕР»СЊРєСѓ operator << СЏРІР»СЏРµС‚СЃСЏ РґСЂСѓРіРѕРј РєР»Р°СЃСЃР° Data, С‚Рѕ РјС‹ РёРјРµРµРј РїСЂСЏРјРѕР№ РґРѕСЃС‚СѓРї Рє С‡Р»РµРЅР°Рј Data
 	if (data.month < 10)
 		out << data.day << ".0" << data.month << "." << data.year;
 	else
@@ -175,8 +175,8 @@ std::ostream& operator<< (std::ostream& out, const Data& data)
 
 std::istream& operator>> (std::istream& in, Data& data)
 {
-	// Поскольку operator>> является другом класса Data, то мы имеем прямой доступ к членам Data.
-	// Обратите внимание, параметр Data (объект класса Data) должен быть неконстантным, чтобы мы имели возможность изменить члены класса
+	// РџРѕСЃРєРѕР»СЊРєСѓ operator>> СЏРІР»СЏРµС‚СЃСЏ РґСЂСѓРіРѕРј РєР»Р°СЃСЃР° Data, С‚Рѕ РјС‹ РёРјРµРµРј РїСЂСЏРјРѕР№ РґРѕСЃС‚СѓРї Рє С‡Р»РµРЅР°Рј Data.
+	// РћР±СЂР°С‚РёС‚Рµ РІРЅРёРјР°РЅРёРµ, РїР°СЂР°РјРµС‚СЂ Data (РѕР±СЉРµРєС‚ РєР»Р°СЃСЃР° Data) РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РЅРµРєРѕРЅСЃС‚Р°РЅС‚РЅС‹Рј, С‡С‚РѕР±С‹ РјС‹ РёРјРµР»Рё РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РёР·РјРµРЅРёС‚СЊ С‡Р»РµРЅС‹ РєР»Р°СЃСЃР°
 	in >> data.day;
 	in >> data.month;
 	in >> data.year;

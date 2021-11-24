@@ -1,9 +1,9 @@
-#include "Data.h"
+п»ї#include "Data.h"
 using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	cout << "Проверяем ввод дат и коректоность их перевода\n\n\n";
+	cout << "С•СЂРѕРІРµСЂВ¤РµРј РІРІРѕРґ РґР°С‚ Рё РєРѕСЂРµРєС‚РѕРЅРѕСЃС‚СЊ РёС… РїРµСЂРµРІРѕРґР°\n\n\n";
 	Data data;
 	Data dataNew(31, 12, 2021);
 	Data dataMuch(40, 15, 2020);
@@ -19,54 +19,54 @@ int main()
 	cout << dataNotLeap << "\n";
 	cout << data << "\n";
 	//cin >> data;
-	cout << "К дате " << data << " прибовляем 365 дней\n";
+	cout << "В  РґР°С‚Рµ " << data << " РїСЂРёР±РѕРІР»В¤РµРј 365 РґРЅРµР№\n";
 	data = data + 365;
 	cout << data << "\n\n\n";
-	cout << "Дату " << data << " сделаем равно " << dataNew << "\n\n\n";
+	cout << "Ж’Р°С‚Сѓ " << data << " СЃРґРµР»Р°РµРј СЂР°РІРЅРѕ " << dataNew << "\n\n\n";
 	data = dataNew;
 	cout << data << "\n\n\n";
-	cout << "Тестируем операции == и !=" << "\n";
+	cout << "вЂњРµСЃС‚РёСЂСѓРµРј РѕРїРµСЂР°С†РёРё == Рё !=" << "\n";
 	if (data == dataNew)
-		cout << "== работает";
+		cout << "== СЂР°Р±РѕС‚Р°РµС‚";
 	else 
-		cout << "== не  работает";
+		cout << "== РЅРµ  СЂР°Р±РѕС‚Р°РµС‚";
 	cout << "\n";
 	if (data != dataMuch)
-		cout << "!= работает";
+		cout << "!= СЂР°Р±РѕС‚Р°РµС‚";
 	else
-		cout << "!= не работает";
+		cout << "!= РЅРµ СЂР°Р±РѕС‚Р°РµС‚";
 	cout << "\n";
-	cout << "Тестируем операции > и <" << "\n";
+	cout << "вЂњРµСЃС‚РёСЂСѓРµРј РѕРїРµСЂР°С†РёРё > Рё <" << "\n";
 	if (dataMidle > dataSmall)
-		cout << "> работает";
+		cout << "> СЂР°Р±РѕС‚Р°РµС‚";
 	else
-		cout << "> работает";
+		cout << "> СЂР°Р±РѕС‚Р°РµС‚";
 	cout << "\n";
 	if (dataMidle < dataLarge)
-		cout << "< работает";
+		cout << "< СЂР°Р±РѕС‚Р°РµС‚";
 	else
-		cout << "< работает";
+		cout << "< СЂР°Р±РѕС‚Р°РµС‚";
 	cout << "\n";
-	cout << "Тестируем операции >= и <=" << "\n";
+	cout << "вЂњРµСЃС‚РёСЂСѓРµРј РѕРїРµСЂР°С†РёРё >= Рё <=" << "\n";
 	if (dataMidle >= dataSmall && dataMidle >= dataMidle)
-		cout << ">= работает";
+		cout << ">= СЂР°Р±РѕС‚Р°РµС‚";
 	else
-		cout << ">= не работает";
+		cout << ">= РЅРµ СЂР°Р±РѕС‚Р°РµС‚";
 	cout << "\n";
 	if (dataMidle <= dataLarge && dataMidle <= dataMidle)
-		cout << "<= работает";
+		cout << "<= СЂР°Р±РѕС‚Р°РµС‚";
 	else
-		cout << "<= не работает";
+		cout << "<= РЅРµ СЂР°Р±РѕС‚Р°РµС‚";
 	cout << "\n";
-	cout << "Тестируем операции ++ и --" << "\n";
+	cout << "вЂњРµСЃС‚РёСЂСѓРµРј РѕРїРµСЂР°С†РёРё ++ Рё --" << "\n";
 	Data dataLow;
-	cout << dataLow << " начальная \n";
-	cout << dataLow-- << " дата до -- \n";
-	cout << dataLow++ << " дата до ++ \n";
-	cout << dataLow << " дата после изменений\n";
-	cout << --dataLow << " дата после -- \n";
-	cout << ++dataLow << " дата после ++ \n";
-	cout << dataLow << " итоговая дата\n";
+	cout << dataLow << " РЅР°С‡Р°Р»СЊРЅР°В¤ \n";
+	cout << dataLow-- << " РґР°С‚Р° РґРѕ -- \n";
+	cout << dataLow++ << " РґР°С‚Р° РґРѕ ++ \n";
+	cout << dataLow << " РґР°С‚Р° РїРѕСЃР»Рµ РёР·РјРµРЅРµРЅРёР№\n";
+	cout << --dataLow << " РґР°С‚Р° РїРѕСЃР»Рµ -- \n";
+	cout << ++dataLow << " РґР°С‚Р° РїРѕСЃР»Рµ ++ \n";
+	cout << dataLow << " РёС‚РѕРіРѕРІР°В¤ РґР°С‚Р°\n";
 	system("pause");
 	return 0;
 }
