@@ -5,18 +5,11 @@ class Data
 	private: unsigned int day, month, year;
 	private: bool leap_year;
 
-	public: Data()
+	public: Data() : day(1), month(1), year(1), leap_year(false)
 	{
-			day = 1; 
-			month = 1; 
-			year = 1;
-			leap_year = false;
 	}
-	public: Data(unsigned int day_, unsigned int month_, unsigned int year_)
-	{	
-		day = day_;
-		month = month_;
-		year = year_;
+	public: Data(unsigned int day_, unsigned int month_, unsigned int year_) : day(day_), month(month_), year(year_)
+	{
 		TideUp();
 	}
 		  friend std::ostream& operator<< (std::ostream& out, const Data& data);

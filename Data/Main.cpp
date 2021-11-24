@@ -19,13 +19,13 @@ int main()
 	cout << dataNotLeap << "\n";
 	cout << data << "\n";
 	//cin >> data;
-	cout << "  дате " << data << " прибовл¤ем 365 дней\n";
+	cout << "К дате " << data << " прибовляем 365 дней\n";
 	data = data + 365;
 	cout << data << "\n\n\n";
-	cout << "ƒату " << data << " сделаем равно " << dataNew << "\n\n\n";
+	cout << "Дату " << data << " сделаем равно " << dataNew << "\n\n\n";
 	data = dataNew;
 	cout << data << "\n\n\n";
-	cout << "“естируем операции == и !=" << "\n";
+	cout << "Тестируем операции == и !=" << "\n";
 	if (data == dataNew)
 		cout << "== работает";
 	else 
@@ -36,7 +36,7 @@ int main()
 	else
 		cout << "!= не работает";
 	cout << "\n";
-	cout << "“естируем операции > и <" << "\n";
+	cout << "Тестируем операции > и <" << "\n";
 	if (dataMidle > dataSmall)
 		cout << "> работает";
 	else
@@ -47,7 +47,7 @@ int main()
 	else
 		cout << "< работает";
 	cout << "\n";
-	cout << "“естируем операции >= и <=" << "\n";
+	cout << "Тестируем операции >= и <=" << "\n";
 	if (dataMidle >= dataSmall && dataMidle >= dataMidle)
 		cout << ">= работает";
 	else
@@ -58,15 +58,15 @@ int main()
 	else
 		cout << "<= не работает";
 	cout << "\n";
-	cout << "“естируем операции ++ и --" << "\n";
+	cout << "Тестируем операции ++ и --" << "\n";
 	Data dataLow;
-	cout << dataLow << " начальна¤ \n";
+	cout << dataLow << " начальная \n";
 	cout << dataLow-- << " дата до -- \n";
 	cout << dataLow++ << " дата до ++ \n";
 	cout << dataLow << " дата после изменений\n";
 	cout << --dataLow << " дата после -- \n";
 	cout << ++dataLow << " дата после ++ \n";
-	cout << dataLow << " итогова¤ дата\n";
+	cout << dataLow << " итоговая дата\n";
 	system("pause");
 	return 0;
 }
