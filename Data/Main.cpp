@@ -1,10 +1,10 @@
-﻿#include "Data.h"
+﻿#include "Data.cpp"
 using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	cout << "ѕровер¤ем ввод дат и коректоность их перевода\n\n\n";
-	Data data;
+	cout << "Проверяем ввод дат и коректоность их перевода\n\n\n";
+	Data dataZero;
 	Data dataNew(31, 12, 2021);
 	Data dataMuch(40, 15, 2020);
 	Data dataLeap(60, 1, 2024);
@@ -12,26 +12,26 @@ int main()
 	Data dataSmall (1, 1, 2000);
 	Data dataMidle(31, 12, 2010);
 	Data dataLarge(31, 12, 2100);
-	cout << data << "\n";
+	cout << dataZero << "\n";
 	cout << dataNew << "\n";
 	cout << dataMuch << "\n";
 	cout << dataLeap << "\n";
 	cout << dataNotLeap << "\n";
-	cout << data << "\n";
+	cout << dataZero << "\n";
 	//cin >> data;
-	cout << "К дате " << data << " прибовляем 365 дней\n";
-	data = data + 365;
-	cout << data << "\n\n\n";
-	cout << "Дату " << data << " сделаем равно " << dataNew << "\n\n\n";
-	data = dataNew;
-	cout << data << "\n\n\n";
+	cout << "К дате " << dataZero << " прибовляем 365 дней\n";
+	dataZero = dataZero + 365;
+	cout << dataZero << "\n\n\n";
+	cout << "Дату " << dataZero << " сделаем равно " << dataNew << "\n\n\n";
+	dataZero = dataNew;
+	cout << dataZero << "\n\n\n";
 	cout << "Тестируем операции == и !=" << "\n";
-	if (data == dataNew)
+	if (dataZero == dataNew)
 		cout << "== работает";
 	else 
 		cout << "== не  работает";
 	cout << "\n";
-	if (data != dataMuch)
+	if (dataZero != dataMuch)
 		cout << "!= работает";
 	else
 		cout << "!= не работает";
